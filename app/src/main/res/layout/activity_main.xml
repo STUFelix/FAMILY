@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </FrameLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha="0.6"
+        android:background="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/main_radiogroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RadioButton
+            android:id="@+id/main_familytree"
+            android:text="家族树"
+            android:drawableTop="@drawable/rb_drawable_tree"
+            style="@style/BottomMenu"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/main_familycontacts"
+            android:text="通讯录"
+            android:drawableTop="@drawable/rb_drawable_contacts"
+            style="@style/BottomMenu" />
+        <RadioButton
+            android:id="@+id/main_familycircle"
+            android:text="家族圈"
+            android:drawableTop="@drawable/rb_drawable_circle"
+            style="@style/BottomMenu" />
+        <RadioButton
+            android:id="@+id/main_familyme"
+            android:text="我"
+            android:drawableTop="@drawable/rb_drawable_me"
+            style="@style/BottomMenu" />
+    </RadioGroup>
+
+</LinearLayout>
