@@ -1371,7 +1371,7 @@ public class FamilyTreeView extends ViewGroup {
 
     public void doShrinkDown() {
 
-        if (mCurrentScale > 1f) {
+        if (mCurrentScale > 0.3f) {
 
             mCurrentScale -= 0.1f;
 
