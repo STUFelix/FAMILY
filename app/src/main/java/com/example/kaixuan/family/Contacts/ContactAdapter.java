@@ -1,6 +1,7 @@
 package com.example.kaixuan.family.Contacts;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,6 +71,7 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    @Nullable
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == ITEM_TYPE.ITEM_TYPE_CHARACTER.ordinal()) {
@@ -79,12 +81,22 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
     }
 
+    private ContactAdapter.OnItemSelectedListener onItemSelectedListener;
+
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof CharacterHolder) {
             ((CharacterHolder) holder).mTextView.setText(resultList.get(position).getmName());
         } else if (holder instanceof ContactHolder) {
-            ((ContactHolder) holder).mTextView.setText(resultList.get(position).getmName());
+            final ContactHolder contactHolder = (ContactHolder)holder;
+            contactHolder.mTextView.setText(resultList.get(position).getmName());
+            contactHolder.mTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = contactHolder.getLayoutPosition();
+                    onItemSelectedListener.onItemClick(contactHolder.itemView,pos);
+                }
+            });
         }
     }
 
@@ -129,5 +141,14 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         return -1; // -1不会滑动
     }
+
+    public interface OnItemSelectedListener{
+        void onItemClick(View view,int position);
+    }
+
+    public void setOnItemSelectedListener(ContactAdapter.OnItemSelectedListener listener){
+        this.onItemSelectedListener = listener;
+    }
+
 }
 

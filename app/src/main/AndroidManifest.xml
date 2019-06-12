@@ -26,6 +26,9 @@
         </activity>
         <activity android:name=".FamilyTreeActivity"></activity>
         <activity android:name=".TryActivity"></activity>
+        <activity android:name=".Contacts.chatInterfaceActivity"></activity>
+        <activity android:name=".MeIntentActivity"></activity>
+        <activity android:name=".Circle.HisCircleActivity"></activity>
     </application>
 
 </manifest>

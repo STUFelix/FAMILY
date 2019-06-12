@@ -6,7 +6,7 @@
     tools:context="com.example.kaixuan.family.CircleFragment">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_test_list"
+        android:id="@+id/rv_hiscircle_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </RelativeLayout>

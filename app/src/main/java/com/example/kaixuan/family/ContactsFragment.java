@@ -1,6 +1,7 @@
 package com.example.kaixuan.family;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.support.v7.widget.*;
 import com.example.kaixuan.family.Contacts.ContactAdapter;
 import com.example.kaixuan.family.Contacts.DividerItemDecoration;
 import com.example.kaixuan.family.Contacts.LetterView;
+import com.example.kaixuan.family.Contacts.chatInterfaceActivity;
 
 public class ContactsFragment extends Fragment {
     private View mView;
@@ -21,8 +23,6 @@ public class ContactsFragment extends Fragment {
     private LetterView letterView;
     private ContactAdapter adapter;
 
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -30,16 +30,22 @@ public class ContactsFragment extends Fragment {
             mView = inflater.inflate(R.layout.contacts_fragment,container,false);
             init();
         }
-
         return mView;
     }
+
     private void init(){
         contactNames = new String[] {"张三丰", "郭靖", "黄蓉", "黄老邪", "赵敏", "123", "天山童姥", "任我行", "于万亭", "陈家洛", "韦小宝", "$6", "穆人清", "陈圆圆", "郭芙", "郭襄", "穆念慈", "东方不败", "梅超风", "林平之", "林远图", "灭绝师太", "段誉", "鸠摩智"};
         contactList = (RecyclerView) mView.findViewById(R.id.contact_list);
         letterView = (LetterView) mView.findViewById(R.id.letter_view);
         layoutManager = new LinearLayoutManager(getContext());
         adapter = new ContactAdapter(getContext(), contactNames);
-
+        adapter.setOnItemSelectedListener(new ContactAdapter.OnItemSelectedListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent intent = new Intent(getContext(),MeIntentActivity.class);
+                startActivity(intent);
+            }
+        });
         contactList.setLayoutManager(layoutManager);
         contactList.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST));
         contactList.setAdapter(adapter);
@@ -55,7 +61,6 @@ public class ContactsFragment extends Fragment {
                 layoutManager.scrollToPositionWithOffset(0, 0);
             }
         });
-
     }
 
 }
