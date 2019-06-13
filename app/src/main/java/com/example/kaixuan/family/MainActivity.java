@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.kaixuan.family.Tree.TREEFragment;
+
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
 
     private RadioGroup navigationBar;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         btnMe = (RadioButton) findViewById(R.id.main_familyme);
         fitDrawable();
         navigationBar.setOnCheckedChangeListener(this);
-        treeFragment = new TreeFragment();
+        treeFragment = new TREEFragment();
         contactsFragment = new ContactsFragment();
         circleFragment = new CircleFragment();
         meFragment = new MeFragment();
