@@ -6,6 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src ="@drawable/defaultavatar"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        app:layout_editor_absoluteY="60dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:id="@+id/name"
+        android:text="琼恩*雪诺"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/job"
+        android:text="职业:  守护北境长城"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        />
+
     <TextView
         android:id="@+id/toChat"
         android:layout_width="match_parent"

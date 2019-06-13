@@ -8,25 +8,36 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.kaixuan.family.Me.MyLifeActivity;
 
 public class MeFragment extends Fragment {
+    private View mView;
+    private TextView MyLifeTextView;
+    private TextView Setting;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.me_fragment, container, false);
+        if(mView == null){
+            mView = inflater.inflate(R.layout.me_fragment, container, false);
+            init();
+        }
+
+        return mView;
     }
 
-    public void onActivityCreated(Bundle savedInstanceState){
-        super.onActivityCreated(savedInstanceState);
-        Button button = (Button) getActivity().findViewById(R.id.start_me);
-        button.setOnClickListener(new View.OnClickListener() {
+    private void init(){
+        MyLifeTextView = mView.findViewById(R.id.mylife);
+        MyLifeTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(),TryActivity.class);
+                Intent intent = new Intent(getContext(),MyLifeActivity.class);
+                startActivity(intent);
+
             }
         });
+
 
     }
 }

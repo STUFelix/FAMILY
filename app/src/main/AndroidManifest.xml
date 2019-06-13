@@ -29,6 +29,7 @@
         <activity android:name=".Contacts.chatInterfaceActivity"></activity>
         <activity android:name=".MeIntentActivity"></activity>
         <activity android:name=".Circle.HisCircleActivity"></activity>
+        <activity android:name=".Me.MyLifeActivity"></activity>
     </application>
 
 </manifest>

@@ -2,42 +2,46 @@ package com.example.kaixuan.family.Circle;
 
 public class Util {
     private static String[] nameArray = new String[]{
-            "Windows", "Mac", "Linux"
+            "赵冬妮", "金星", "塘主张翰","艾德·史塔克","乔佛里·拜拉席恩","波澜哥","郑九妹","梁逸峰","霍斯特·徒利","维拉妹妹","詹妮弗·菲拉文","劳勃·拜拉席恩"
     };
+
 
     private static String[] contentArray = new String[]{
-            "Microsoft® Windows® 7/8/10 (32- or 64-bit)\n" +
-                    "2 GB RAM minimum, 8 GB RAM recommended\n" +
-                    "2 GB of available disk space minimum,\n" +
-                    "4 GB Recommended (500 MB for IDE + 1.5 GB for Android SDK and emulator system image)\n" +
-                    "1280 x 800 minimum screen resolution\n" +
-                    "Java Development Kit (JDK) 8\n" +
-                    "For accelerated emulator: 64-bit operating system and Intel® processor with support for Intel® VT-x, Intel® EM64T (Intel® 64), and Execute Disable (XD) Bit functionality" +
-                    "2 GB RAM minimum, 8 GB RAM recommended\n" +
-                    "2 GB of available disk space minimum,\n" +
-                    "4 GB Recommended (500 MB for IDE + 1.5 GB for Android SDK and emulator system image)\n" +
-                    "1280 x 800 minimum screen resolution\n" +
-                    "Java Development Kit (JDK) 8\n" +
-                    "For accelerated emulator: 64-bit operating system and Intel® processor with support for Intel® VT-x, Intel® EM64T (Intel® 64), and Execute Disable (XD) Bit functionality" +
-                    "2 GB RAM minimum, 8 GB RAM recommended\n" +
-                    "2 GB of available disk space minimum,\n" +
-                    "4 GB Recommended (500 MB for IDE + 1.5 GB for Android SDK and emulator system image)\n" +
-                    "1280 x 800 minimum screen resolution\n" +
-                    "Java Development Kit (JDK) 8\n" +
-                    "For accelerated emulator: 64-bit operating system and Intel® processor with support for Intel® VT-x, Intel® EM64T (Intel® 64), and Execute Disable (XD) Bit functionality",
-            "Mac® OS X® 10.8.5 or higher, up to 10.11.4 (El Capitan)",
-            "GNOME or KDE desktop\n" +
-                    "Tested on Ubuntu® 12.04, Precise Pangolin (64-bit distribution capable of running 32-bit applications)\n" +
-                    "64-bit distribution capable of running 32-bit applications\n" +
-                    "GNU C Library (glibc) 2.11 or later\n" +
-                    "2 GB RAM minimum, 8 GB RAM recommended\n" +
-                    "2 GB of available disk space minimum,\n" +
-                    "4 GB Recommended (500 MB for IDE + 1.5 GB for Android SDK and emulator system image)\n" +
-                    "1280 x 800 minimum screen resolution\n" +
-                    "Java Development Kit (JDK) 8\n" +
-                    "For accelerated emulator: Intel® processor with support for Intel® VT-x, Intel® EM64T (Intel® 64), and Execute Disable (XD) Bit functionality, or AMD processor with support for AMD Virtualization™ (AMD-V™)"
+            "我给你一颗糖，\n" +
+                    "你很高兴，\n" +
+                    "当你看到我给别人两颗，。\n" +
+                    "你就对我有看法了。\n" +
+                    "但你不知道他也曾给我两颗糖，\n" +
+                    "而你什么都没给过我！" ,
+            "没钱时说有钱人是暴发户赚黑心钱，\n" +
+                    "有钱了看没钱的是穷鬼；\n" +
+                    "骑车时觉得开车的横行霸道，\n" +
+                    "开车时认定骑车的人满街乱窜缺乏素质；\n" +
+                    "吃不起好的时认为吃好的人都穷奢极欲，\n" +
+                    "吃的起燕翅鲍觉得吃盒饭的都不忍直视。\n" +
+                    "大多数人会觉得自己的生活方式才是正常的，\n" +
+                    "这就是人性。" ,
+            "该来的始终会来，\n" +
+                    "千万别太着急，\n" +
+                    "如果你失去了耐心，\n" +
+                    "就会失去更多。\n" +
+                    "该走过的路总是要走过的，\n"+
+                    "从来不要认为你走错了路，\n"+
+                    "哪怕最后转了一个大弯。\n" +
+                    "这条路上你看到的风景总是特属于你自己的，\n" +
+                    "没有人能夺走它。" ,
+            "今天孙子陪我去遛鸟，年轻就是好啊" ,
+            "宁愿做一个高冷的孤独患者，也无心迎取他人的欢喜!" ,
+            "我最特么讨厌的一种人就是擅长阿谀奉承精通花言巧语的人，因为跟他们呆在一起会显得老子很不懂做人。" ,
+            "别人对你说的话，做的事，从来不能决定你是什么样的人;你对别人说的话，做的事，才能决定你是什么样的人 。" ,
+            "有伟大志向的人，都可以成为圣人。" ,
+            "早起伸懒腰，面对镜子笑，做个深呼吸，心态调整好，快乐好心情，烦恼全抛掉，出门带微笑，好运自然到。简单问候到，开心无烦恼，顺心又顺意，快乐每一秒！早上好！" ,
+            "清晨起，送你一缕快乐的晨光，两丝舒心的清风，三把健康的雨露，四份美好的心情，五种别样的雅致，六份奋进的激情，七样积极的心态，八面玲珑的高兴，久久不息的祝福，只为你十分的如意，祝你，早安！",
+            "似水流年是一个人所有的一切，只有这个东西，才真正归你所有。其余的一切，都是片刻的欢愉和不幸",
+            "该来的始终会来，千万别太着急，如果你失去了耐心，就会失去更多。该走过的路总是要走过的，从来不要认为你走错了路，哪怕最后转了一个大弯。这条路上你看到的风景总是特属于你自己的，没有人能夺走它。",
 
     };
+
 
     public static String getContent(int position) {
         return contentArray[position % contentArray.length];
