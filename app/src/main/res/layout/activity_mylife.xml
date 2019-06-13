@@ -1,10 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text="这是我的传记"
-    />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Me.MyLifeActivity"
+    >
+
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical">
+
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <View   android:background="@color/mediumblue"  android:layout_marginLeft="5dp"
+                        android:layout_width="5dp" android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                        android:text="人物综述" android:textStyle="bold"    android:textColor="@color/black"
+                        android:layout_height="match_parent" android:layout_width="wrap_content"/>
+                    <View   android:layout_marginRight="8dp"    android:alpha="0.5"
+                        android:background="@color/black" android:layout_width="match_parent"
+                        android:layout_height="1dp" android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <TextView android:id="@+id/summarize"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"    android:paddingRight="10dp"/>
+
+            </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="10dp" android:background="@color/gray" android:layout_marginBottom="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:orientation="horizontal"
+                >
+                <View   android:background="@color/mediumblue"  android:layout_marginLeft="5dp"
+                    android:layout_width="5dp" android:layout_height="match_parent"/>
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                    android:text="人物外貌" android:textStyle="bold"    android:textColor="@color/black"
+                    android:layout_height="match_parent" android:layout_width="wrap_content"/>
+                <View   android:layout_marginRight="8dp"    android:alpha="0.5"
+                    android:background="@color/black" android:layout_width="match_parent"
+                    android:layout_height="1dp" android:layout_gravity="center"/>
+
+            </LinearLayout>
+            <TextView android:id="@+id/appearance"   android:text=""
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:paddingLeft="10dp"    android:paddingRight="10dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/black"
+                />
+
+
+        </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp" android:background="@color/gray" android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:orientation="horizontal"
+                    >
+                    <View   android:background="@color/mediumblue"  android:layout_marginLeft="5dp"
+                        android:layout_width="5dp" android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                        android:text="人物经历" android:textStyle="bold"    android:textColor="@color/black"
+                        android:layout_height="match_parent" android:layout_width="wrap_content"/>
+                    <View   android:layout_marginRight="8dp"    android:alpha="0.5"
+                        android:background="@color/black" android:layout_width="match_parent"
+                        android:layout_height="1dp" android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <TextView android:id="@+id/experience"   android:text=""
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"    android:paddingRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black"
+                    />
+
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="10dp" android:background="@color/gray" android:layout_marginBottom="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:orientation="horizontal"
+                    >
+                    <View   android:background="@color/mediumblue"  android:layout_marginLeft="5dp"
+                        android:layout_width="5dp" android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:layout_marginLeft="5dp" android:layout_marginRight="5dp"
+                        android:text="人物评价" android:textStyle="bold"    android:textColor="@color/black"
+                        android:layout_height="match_parent" android:layout_width="wrap_content"/>
+                    <View   android:layout_marginRight="8dp"    android:alpha="0.5"
+                        android:background="@color/black" android:layout_width="match_parent"
+                        android:layout_height="1dp" android:layout_gravity="center"/>
+
+                </LinearLayout>
+                <TextView android:id="@+id/evaluate"   android:text=""
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"    android:paddingRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/black"
+                    />
+
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="10dp" android:background="@color/gray" android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>

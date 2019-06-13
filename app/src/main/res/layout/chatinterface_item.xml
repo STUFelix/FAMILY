@@ -53,7 +53,7 @@
 
             <TextView
                 android:id="@+id/tv_nickname_send"
-                android:text="李晨"
+                android:text="琼恩*雪诺"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"/>

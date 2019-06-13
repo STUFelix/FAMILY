@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kaixuan.family.Circle.HisCircleActivity;
 import com.example.kaixuan.family.Contacts.chatInterfaceActivity;
@@ -13,6 +14,7 @@ import com.example.kaixuan.family.Contacts.chatInterfaceActivity;
 public class MeIntentActivity extends AppCompatActivity {
     private TextView toChattextView;
     private TextView HisCircletextView;
+    private TextView addFriend;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,5 +39,14 @@ public class MeIntentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        addFriend = findViewById(R.id.addfriend);
+        addFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MeIntentActivity.this,"已经发送好友申请",Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 }
