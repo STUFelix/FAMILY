@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".login.ToSignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +30,8 @@
         <activity android:name=".MeIntentActivity"></activity>
         <activity android:name=".Circle.HisCircleActivity"></activity>
         <activity android:name=".Me.MyLifeActivity"></activity>
+        <activity android:name=".login.ToSignUpActivity"></activity>
+        <activity android:name=".MainActivity"></activity>>
     </application>
 
 </manifest>

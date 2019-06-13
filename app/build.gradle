@@ -34,4 +34,6 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation files('libs/pinyin4j-2.5.0.jar')
     implementation 'com.zhy:base-rvadapter:3.0.3'
+    implementation 'cn.bmob.android:bmob-sdk:3.6.3'
+
 }
