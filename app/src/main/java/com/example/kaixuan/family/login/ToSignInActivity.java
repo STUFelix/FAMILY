@@ -59,7 +59,9 @@ public class ToSignInActivity  extends AppCompatActivity implements View.OnClick
                     public void done(BmobUser user,BmobException e){
                         if(e == null){
                             Toast.makeText(ToSignInActivity.this,"登录成功",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(ToSignInActivity.this,MainActivity.class);
+                            Intent intent = new Intent();
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.setClass(ToSignInActivity.this,MainActivity.class);
                             startActivity(intent);
                         }
                         else {

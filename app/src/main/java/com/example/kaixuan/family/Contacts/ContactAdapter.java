@@ -1,14 +1,21 @@
 package com.example.kaixuan.family.Contacts;
 
+import android.app.Fragment;
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.kaixuan.family.ContactsFragment;
+import com.example.kaixuan.family.GlideCircleTransform;
 import com.example.kaixuan.family.R;
+import com.example.kaixuan.family.Tree.TREEFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,17 +31,18 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private List<String> mContactList; // 联系人名称List（转换成拼音）
     private List<Contact> resultList; // 最终结果（包含分组的字母）
     private List<String> characterList; // 字母List
+    private List<String> imageViewURL;
 
     public enum ITEM_TYPE {
         ITEM_TYPE_CHARACTER,
         ITEM_TYPE_CONTACT
     }
 
-    public ContactAdapter(Context context, String[] contactNames) {
+    public ContactAdapter(Context context, String[] contactNames, List<String>  imageViewURL) {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
         mContactNames = contactNames;
-
+        this.imageViewURL =imageViewURL;
         handleContact();
     }
 
@@ -90,13 +98,20 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         } else if (holder instanceof ContactHolder) {
             final ContactHolder contactHolder = (ContactHolder)holder;
             contactHolder.mTextView.setText(resultList.get(position).getmName());
-            contactHolder.mTextView.setOnClickListener(new View.OnClickListener() {
+            contactHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int pos = contactHolder.getLayoutPosition();
                     onItemSelectedListener.onItemClick(contactHolder.itemView,pos);
                 }
             });
+            Glide.with(mContext)
+                    .load(imageViewURL.get(position))
+                    .centerCrop()
+                    .placeholder(R.drawable.family_avatar)
+                    .error(R.drawable.family_avatar)
+                    .transform(new GlideCircleTransform(mContext))
+                    .into(contactHolder.imageView);
         }
     }
 
@@ -122,10 +137,10 @@ public class ContactAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     public class ContactHolder extends RecyclerView.ViewHolder {
         TextView mTextView;
-
+        ImageView imageView;
         ContactHolder(View view) {
             super(view);
-
+            imageView = (ImageView) view.findViewById(R.id.contact_imageView);
             mTextView = (TextView) view.findViewById(R.id.contact_name);
         }
     }

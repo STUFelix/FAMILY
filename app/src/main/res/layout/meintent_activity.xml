@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         app:layout_constraintLeft_toRightOf="@id/imageView"
-        app:layout_editor_absoluteY="60dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="15dp"
         android:textSize="24dp"
         android:textColor="@color/black"
@@ -38,6 +39,18 @@
         app:layout_constraintLeft_toRightOf="@id/imageView"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:layout_marginTop="35dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="个性签名：他虽然名分上没有史塔克这个姓，却有张地地道道史塔克家人的脸：脸长、严肃拘谨、喜怒不形于色。不论他母亲是谁，想必在他身上没留下多少自己的特征."
         />
 
     <TextView

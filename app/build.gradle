@@ -35,5 +35,4 @@ dependencies {
     implementation files('libs/pinyin4j-2.5.0.jar')
     implementation 'com.zhy:base-rvadapter:3.0.3'
     implementation 'cn.bmob.android:bmob-sdk:3.6.3'
-
 }

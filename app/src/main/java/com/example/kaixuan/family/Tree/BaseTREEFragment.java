@@ -11,9 +11,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
@@ -21,10 +20,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.example.kaixuan.family.AppManager;
-import com.example.kaixuan.family.BaseActivity;
 import com.example.kaixuan.family.DefaultAlertDialog;
 import com.example.kaixuan.family.DisplayUtil;
-import com.example.kaixuan.family.R;
+
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;

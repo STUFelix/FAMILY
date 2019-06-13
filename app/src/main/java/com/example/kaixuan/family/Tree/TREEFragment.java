@@ -1,6 +1,7 @@
 package com.example.kaixuan.family.Tree;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,6 +15,7 @@ import com.example.kaixuan.family.AssetsUtil;
 import com.example.kaixuan.family.FamilyLiteOrm;
 import com.example.kaixuan.family.FamilyMember;
 import com.example.kaixuan.family.FamilyTreeView;
+import com.example.kaixuan.family.MeIntentActivity;
 import com.example.kaixuan.family.OnFamilySelectListener;
 import com.example.kaixuan.family.R;
 
@@ -137,9 +139,9 @@ public class TREEFragment extends BaseTREEFragment{
         public void onFamilySelect(FamilyMember family) {
 
             if (family.isSelect()) {
-
                 /**点击已经选中的头像跳转到"我的"activity*/
-
+                Intent intent = new Intent(getActivity(),MeIntentActivity.class);
+                startActivity(intent);
             } else {
 
                 String currentFamilyId = family.getMemberId();

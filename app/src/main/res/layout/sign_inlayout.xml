@@ -41,13 +41,13 @@
             android:textSize="16sp"
 
             android:textColor="#2F4F4F"
-            android:background="#FFFFFF"
+            android:background="@drawable/textview_border"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-
+            android:layout_marginTop="10dp"
             android:id="@+id/sign_in_password"
             android:hint="密码"
             android:textSize="16sp"
@@ -56,7 +56,7 @@
             android:maxLines="1"
 
             android:textColor="#2F4F4F"
-            android:background="#FFFFFF"
+            android:background="@drawable/textview_border"
             />
 
     </LinearLayout>
@@ -88,7 +88,17 @@
 
         android:text="登录" />
 
+    <TextView
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="欢迎使用家族树 !"
+        android:textColor="@color/blue_sky"
+        android:layout_below="@+id/sign_in_sign_in"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:textSize="34sp"
+        />
 
 
 </RelativeLayout>

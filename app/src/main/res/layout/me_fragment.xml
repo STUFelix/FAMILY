@@ -2,18 +2,29 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        />
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src ="@drawable/defaultavatar"
+        android:scaleType="centerCrop"/>
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:id="@+id/name"
         android:text="琼恩*雪诺"
         />
@@ -21,7 +32,29 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/job"
-        android:text="职业:守护北境长城"
+        android:text="职业:  守护北境长城"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintLeft_toRightOf="@id/imageView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:text="国籍：美国                |       出生地：美国纽约
+家族：史塔克家族  |        年龄：35
+ 主要成就：
+                       1999年创办阿里巴巴集团
+                       2009年中国经济十年商业领袖
+                       2012年CCTV中国经济年度任务
+"
         />
 
     <TextView
@@ -32,7 +65,7 @@
         android:text="我的生平"
         android:textSize="24dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/settingup"
+        app:layout_constraintBottom_toTopOf="@id/log_out"
         android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
@@ -41,13 +74,13 @@
         />
 
     <TextView
-        android:id="@+id/settingup"
+        android:id="@+id/log_out"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textSize="24dp"
         android:textColor="@color/black"
         android:gravity="center"
-        android:text="设置"
+        android:text="退出登录"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="100dp"
         android:layout_marginRight="8dp"
