@@ -1,6 +1,8 @@
 package com.example.kaixuan.family.Tree;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONArray;
 import com.example.kaixuan.family.AssetsUtil;
@@ -28,6 +32,12 @@ public class TREEFragment extends BaseTREEFragment{
     private Button btnEnlarge;
 
     private Button btnShrinkDown;
+
+    private Button btnAddmember;
+
+    private Button btngetPermission;
+
+    private Button btnDeletemember;
 
     private FamilyTreeView ftvTree;
 
@@ -91,6 +101,12 @@ public class TREEFragment extends BaseTREEFragment{
 
         ftvTree = (FamilyTreeView) mView.findViewById(R.id.ftv_tree); //原来括号里面竟然是个类名，强制转换。
 
+        btnAddmember = (Button) mView.findViewById(R.id.addmember);
+
+        btnDeletemember = (Button) mView.findViewById(R.id.deletemember);
+
+        btngetPermission = (Button) mView.findViewById(R.id.get_permission);
+
     }
 
 
@@ -116,6 +132,10 @@ public class TREEFragment extends BaseTREEFragment{
         btnEnlarge.setOnClickListener(click);
 
         btnShrinkDown.setOnClickListener(click);
+
+        btnAddmember.setOnClickListener(click);
+        btnDeletemember.setOnClickListener(click);
+        btngetPermission.setOnClickListener(click);
 
 
         FamilyMember mFamilyMember = mDatabase.getFamilyTreeById(MY_ID);
@@ -161,6 +181,7 @@ public class TREEFragment extends BaseTREEFragment{
     };
 
 
+    private static int famaly_permission = -1;
 
     private View.OnClickListener click = new View.OnClickListener() {
 
@@ -181,6 +202,59 @@ public class TREEFragment extends BaseTREEFragment{
                     ftvTree.doShrinkDown();
 
                     break;
+
+                case R.id.addmember:
+                    if (famaly_permission == 1){
+                        Intent intent = new Intent(getActivity(),AddMemberActivity.class);
+                        startActivity(intent);
+                    }else {
+                        Toast.makeText(getActivity(),"请先获得权限",Toast.LENGTH_LONG).show();
+                    }
+                    break;
+
+                case R.id.get_permission:
+                    final EditText editText = new EditText(mView.getContext());
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(mView.getContext());
+
+                    alertDialog.setTitle("请输入秘钥").setView(editText).setPositiveButton("验证", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    String ET_String = editText.getText().toString();
+                                    if(ET_String.equals("mima")){
+                                        Toast.makeText(getActivity(),"成功获得权限",Toast.LENGTH_LONG).show();
+                                        famaly_permission = 1;
+                                    }
+                                }
+                            }).setNegativeButton("取消",null).show();
+
+
+                    famaly_permission = 1;
+
+                    break;
+
+                case R.id.deletemember:
+
+                    if (famaly_permission == 1){
+                    final EditText delete_EditText = new EditText(mView.getContext());
+                    AlertDialog.Builder delete_alertDialog = new AlertDialog.Builder(mView.getContext());
+
+                    delete_alertDialog.setTitle("请输入要删除的id号").setView(delete_EditText).setPositiveButton("确认删除", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String Delete_ET_String = delete_EditText.getText().toString();
+                            Toast.makeText(getActivity(),"成功删除"+Delete_ET_String,Toast.LENGTH_LONG).show();
+
+                        }
+                    }).setNegativeButton("取消",null).show();
+                    }else {
+                        Toast.makeText(getActivity(),"请先获得权限",Toast.LENGTH_LONG).show();
+
+                    }
+
+                    break;
+
+                    default:
+                        break;
             }
         }
     };
