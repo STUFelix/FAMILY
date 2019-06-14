@@ -24,13 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FamilyTreeActivity"></activity>
         <activity android:name=".Contacts.chatInterfaceActivity"></activity>
         <activity android:name=".MeIntentActivity"></activity>
         <activity android:name=".Circle.HisCircleActivity"></activity>
         <activity android:name=".Me.MyLifeActivity"></activity>
         <activity android:name=".login.ToSignUpActivity"></activity>
-        <activity android:name=".MainActivity"></activity>>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".login.ToUpdateActivity"></activity>
     </application>
 
 </manifest>
